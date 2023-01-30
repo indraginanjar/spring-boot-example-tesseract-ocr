@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spring Boot Example - Tesseract OCR</title>
+    </head>
+    <body>
+    <h1>Spring Boot Example - Tesseract OCR</h1>
+        <table aria-describedby="Images containing text" border="1">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Language</th>
+                    <th>Text</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="img : ${images}">
+                <tr>
+                    <td>
+                        <img width="130px" th:src="@{${img.fileName}}" />
+                    </td>
+                    <td th:text="${img.language}" />
+                    <td th:text="${img.text}" />
+                </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </body>
+</html>
